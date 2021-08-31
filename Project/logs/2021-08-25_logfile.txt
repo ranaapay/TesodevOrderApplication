@@ -1,0 +1,2 @@
+2021-08-25 17:18:59.3510 ERROR Invalid model state for the CustomerForCreationDto object
+2021-08-25 17:21:02.5566 INFO Customer with id: 61265160e213c2e92a999e5b doesn't exist in the database.

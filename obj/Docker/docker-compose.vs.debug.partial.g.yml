@@ -1,0 +1,139 @@
+version: '3.4'
+
+services:
+  aggreation_api:
+    image: aggreationapi:dev
+    container_name: Aggreation_Api
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Aggreation_Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_aggreation_api$
+    volumes:
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\Aggreation_Api:/app
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION:/src
+      - C:\Users\Rana\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_aggreation_api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_aggreation_api$ \"/app/bin/Debug/net5.0/Aggreation_Api.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+  customer_api:
+    image: customerapi:dev
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Customer_Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_customer_api$
+    volumes:
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\Customer_Api:/app
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION:/src
+      - C:\Users\Rana\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_customer_api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_customer_api$ \"/app/bin/Debug/net5.0/Customer_Api.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  ocelot_api:
+    image: ocelotapi:dev
+    container_name: Ocelot_Api
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Ocelot_Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_ocelot_api$
+    volumes:
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\Ocelot_Api:/app
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION:/src
+      - C:\Users\Rana\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_ocelot_api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_ocelot_api$ \"/app/bin/Debug/net5.0/Ocelot_Api.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  order_api:
+    image: orderapi:dev
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Order_Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_order_api$
+    volumes:
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\Order_Api:/app
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION:/src
+      - C:\Users\Rana\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_order_api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_order_api$ \"/app/bin/Debug/net5.0/Order_Api.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  product_api:
+    image: productapi:dev
+    container_name: Product_Api
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Product_Api"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_product_api$
+    volumes:
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\Product_Api:/app
+      - C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION:/src
+      - C:\Users\Rana\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_product_api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_product_api$ \"/app/bin/Debug/net5.0/Product_Api.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true

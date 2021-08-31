@@ -1,0 +1,100 @@
+services:
+  aggreation_api:
+    build:
+      context: C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION
+      dockerfile: Aggreation_Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: aggreationapi
+    ports:
+    - published: 8011
+      target: 80
+    volumes:
+    - C:\Users\Rana\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Rana\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  customer_api:
+    build:
+      context: C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION
+      dockerfile: Customer_Api/Dockerfile
+    container_name: customer_api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: customerapi
+    ports:
+    - published: 8000
+      target: 80
+    volumes:
+    - C:\Users\Rana\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+  customerapimongo:
+    container_name: customerapimongo
+    image: mongo
+    ports:
+    - published: 27018
+      target: 27017
+    volumes:
+    - customerapimongo:/data/db:rw
+  ocelot_api:
+    build:
+      context: C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION
+      dockerfile: Ocelot_Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: ocelotapi
+    ports:
+    - published: 8010
+      target: 80
+    volumes:
+    - C:\Users\Rana\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Rana\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  order_api:
+    build:
+      context: C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION
+      dockerfile: Order_Api/Dockerfile
+    container_name: order_api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: orderapi
+    ports:
+    - published: 8001
+      target: 80
+    volumes:
+    - C:\Users\Rana\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+  orderapimongo:
+    container_name: orderapimongo
+    image: mongo
+    ports:
+    - published: 27019
+      target: 27017
+    volumes:
+    - orderapimongo:/data/db:rw
+  product_api:
+    build:
+      context: C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION
+      dockerfile: Product_Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: productapi
+    ports:
+    - published: 8002
+      target: 80
+    volumes:
+    - C:\Users\Rana\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Rana\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  productapimongo:
+    container_name: productapimongo
+    image: mongo
+    ports:
+    - published: 27020
+      target: 27017
+    volumes:
+    - productapimongo:/data/db:rw
+version: '3.4'
+volumes:
+  customerapimongo: {}
+  orderapimongo: {}
+  productapimongo: {}

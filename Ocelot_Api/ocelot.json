@@ -1,0 +1,55 @@
+﻿{
+    "Routes": [
+        //Customer API
+        {
+            "DownstreamPathTemplate": "/api/customer",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "customer_api",
+                    "Port": "80"
+                }
+            ],
+            "UpstreamPathTemplate": "/customer",
+            "UpstreamHttpMethod": [ "GET", "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/customer/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "customer_api",
+                    "Port": "80"
+                }
+            ],
+            "UpstreamPathTemplate": "/customer/{id}",
+            "UpstreamHttpMethod": [ "GET", "DELETE", "PUT" ]
+        },
+        //Order API
+        {
+            "DownstreamPathTemplate": "/api/order",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "order_api",
+                    "Port": "80"
+                }
+            ],
+            "UpstreamPathTemplate": "/order",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/order/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "order_api",
+                    "Port": "80"
+                }
+            ],
+            "UpstreamPathTemplate": "/order/{id}",
+            "UpstreamHttpMethod": [ "GET", "DELETE" ]
+        }
+
+    ]
+}

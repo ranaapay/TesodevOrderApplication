@@ -1,0 +1,66 @@
+version: '3.4'
+
+services:
+  customer_api:
+    image: ${DOCKER_REGISTRY-}customerapi
+    container_name: customer_api
+    build:
+      context: .
+      dockerfile: Customer_Api/Dockerfile
+
+  order_api:
+    image: ${DOCKER_REGISTRY-}orderapi
+    container_name: order_api
+    build:
+      context: .
+      dockerfile: Order_Api/Dockerfile
+
+  customerapimongo:
+     image: mongo
+     container_name: customerapimongo
+     volumes:
+     - customerapimongo:/data/db
+     ports:
+     - 27018:27017
+
+  orderapimongo:
+     image: mongo
+     container_name: orderapimongo
+     volumes:
+     - orderapimongo:/data/db
+     ports:
+     - 27019:27017
+
+  ocelot_api:
+    image: ${DOCKER_REGISTRY-}ocelotapi
+    build:
+      context: .
+      dockerfile: Ocelot_Api/Dockerfile
+
+  aggreation_api:
+    image: ${DOCKER_REGISTRY-}aggreationapi
+    build:
+      context: .
+      dockerfile: Aggreation_Api/Dockerfile
+
+  product_api:
+    image: ${DOCKER_REGISTRY-}productapi
+    build:
+      context: .
+      dockerfile: Product_Api/Dockerfile
+
+  productapimongo:
+     image: mongo
+     container_name: productapimongo
+     volumes:
+     - productapimongo:/data/db
+     ports:
+     - 27020:27017
+
+volumes:
+  customerapimongo:
+  orderapimongo:
+  productapimongo:
+
+
+

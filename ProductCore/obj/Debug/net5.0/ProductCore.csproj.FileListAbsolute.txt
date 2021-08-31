@@ -1,0 +1,12 @@
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\bin\Debug\net5.0\ProductCore.deps.json
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\bin\Debug\net5.0\ProductCore.dll
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\bin\Debug\net5.0\ref\ProductCore.dll
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\bin\Debug\net5.0\ProductCore.pdb
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ProductCore.csprojAssemblyReference.cache
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ProductCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ProductCore.AssemblyInfoInputs.cache
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ProductCore.AssemblyInfo.cs
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ProductCore.csproj.CoreCompileInputs.cache
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ProductCore.dll
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ref\ProductCore.dll
+C:\Users\Rana\RiderProjects\TESODEV ORDER APPLICATION\ProductCore\obj\Debug\net5.0\ProductCore.pdb
